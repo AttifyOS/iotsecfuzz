@@ -1,0 +1,8 @@
+[package_detail]
+name = "iotsecfuzz"
+description = "A framework for for comprehensive testing of IoT device security at all levels of implementation"
+version = "1.0.0"
+source_url = "https://gitlab.com/invuls/iot-projects/iotsecfuzz"
+license = "MIT"
+install_script = "setup.sh"
+install_script_type = "shell"
