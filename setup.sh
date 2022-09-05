@@ -32,8 +32,9 @@ install() {
   tar xf $APM_TMP_DIR/cpython-3.10.6.tar.gz -C $APM_PKG_INSTALL_DIR
   rm $APM_TMP_DIR/cpython-3.10.6.tar.gz
 
-  $APM_PKG_INSTALL_DIR/python/bin/pip3.10 install wheel
-  $APM_PKG_INSTALL_DIR/python/bin/pip3.10 install git+https://gitlab.com/invuls/iot-projects/iotsecfuzz@7909bfe9e05d0dd198cb22415c904bf7aa144b59
+  # "|| true" is necessary to workaround the error
+  # ERROR: IoTSecFuzz==1.0.0 did not indicate that it installed an .egg-info directory. Only setup.py projects generating .egg-info directories are supported.
+  $APM_PKG_INSTALL_DIR/python/bin/pip3.10 install git+https://gitlab.com/invuls/iot-projects/iotsecfuzz@7909bfe9e05d0dd198cb22415c904bf7aa144b59 || true
 
   ln -s $APM_PKG_INSTALL_DIR/python/bin/isf $APM_PKG_BIN_DIR/
   ln -s $APM_PKG_INSTALL_DIR/python/bin/isfpm $APM_PKG_BIN_DIR/
